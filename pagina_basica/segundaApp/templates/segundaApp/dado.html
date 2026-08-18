@@ -1,0 +1,41 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Segunda App | Maquina Numerica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'segundaApp/css/dado.css' %}" />
+</head>
+<body>
+    <button class="back-btn" type="button" data-go-back data-fallback="/segundaApp/" aria-label="Volver a la pagina anterior">
+        ← Volver
+    </button>
+
+    <main class="stage">
+        <p class="kicker">mini juego</p>
+        <h1>Maquina numerica</h1>
+        <p class="hint">Pulsa el boton para generar un numero aleatorio del 1 al 100.</p>
+
+        <section id="machine" class="machine" aria-live="polite">
+            <div class="machine-top-lights" aria-hidden="true">
+                <span class="light"></span>
+                <span class="light"></span>
+                <span class="light"></span>
+            </div>
+            <div class="screen-wrap">
+                <div id="numberScreen" class="screen">001</div>
+            </div>
+            <button id="spinButton" class="spin-btn" type="button">Generar numero</button>
+        </section>
+
+        <p class="result">Resultado actual: <strong id="resultValue">1</strong></p>
+    </main>
+
+    <script src="{% static 'segundaApp/js/navigation.js' %}"></script>
+    <script src="{% static 'segundaApp/js/dado.js' %}"></script>
+</body>
+</html>

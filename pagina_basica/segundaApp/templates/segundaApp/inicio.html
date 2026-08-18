@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Segunda App | Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'segundaApp/css/inicio.css' %}" />
+</head>
+<body>
+    <button class="back-btn" type="button" data-go-back data-fallback="/" aria-label="Volver a la pagina anterior">
+        ← Volver
+    </button>
+
+    <main class="shell">
+        <section class="welcome-card">
+            <p class="kicker">segunda app</p>
+            <h1>Bienvenido a la segunda aplicacion</h1>
+            <p class="summary">
+                Esta vista fue optimizada con separacion clara entre logica, estructura y estilos.
+                Ya tienes una base escalable para seguir agregando funcionalidades.
+            </p>
+            <div class="actions">
+                <a class="btn btn-main" href="/segundaApp/saludo/">Ver saludo</a>
+                <a class="btn btn-alt" href="/segundaApp/maquina-numerica/">Abrir maquina numerica</a>
+                <a class="btn btn-alt" href="/">Volver al inicio del proyecto</a>
+            </div>
+        </section>
+
+        <aside class="info-panel">
+            <h2>Buenas practicas aplicadas</h2>
+            <ul>
+                <li>Vista Python con responsabilidad minima.</li>
+                <li>Plantilla HTML desacoplada.</li>
+                <li>Estilos y JavaScript externos.</li>
+            </ul>
+        </aside>
+    </main>
+
+    <script src="{% static 'segundaApp/js/navigation.js' %}"></script>
+</body>
+</html>

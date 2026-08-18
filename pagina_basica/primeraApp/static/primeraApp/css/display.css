@@ -1,0 +1,192 @@
+:root {
+    --ink: #0f1a21;
+    --ink-soft: #38424a;
+    --bg-cream: #f7f3ea;
+    --bg-sand: #eadfcf;
+    --bg-clay: #c7854d;
+    --accent: #186f65;
+    --accent-dark: #0f4f48;
+    --card: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    color: var(--ink);
+    font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
+    background:
+        radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.55) 0 16%, transparent 40%),
+        radial-gradient(circle at 82% 86%, rgba(24, 111, 101, 0.24) 0 20%, transparent 40%),
+        linear-gradient(120deg, var(--bg-cream) 0%, var(--bg-sand) 54%, var(--bg-clay) 100%);
+    overflow: hidden;
+}
+
+.back-btn {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    border: 1px solid rgba(15, 79, 72, 0.25);
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--accent-dark);
+    border-radius: 999px;
+    padding: 0.48rem 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.back-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.ambient-shape {
+    position: fixed;
+    border-radius: 999px;
+    filter: blur(0.5px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.shape-a {
+    width: 320px;
+    aspect-ratio: 1;
+    background: rgba(15, 79, 72, 0.12);
+    top: -110px;
+    right: -90px;
+    animation: floatY 8s ease-in-out infinite;
+}
+
+.shape-b {
+    width: 240px;
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.45);
+    bottom: -70px;
+    left: -50px;
+    animation: floatY 10s ease-in-out infinite reverse;
+}
+
+.hero-card {
+    position: relative;
+    z-index: 1;
+    width: min(760px, 100%);
+    padding: clamp(1.6rem, 4vw, 3rem);
+    border-radius: 24px;
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 24px 50px rgba(52, 45, 38, 0.22);
+    backdrop-filter: blur(8px);
+    animation: riseIn 0.75s ease-out;
+}
+
+.eyebrow {
+    margin: 0 0 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent-dark);
+    font-weight: 700;
+    font-size: 0.78rem;
+}
+
+h1 {
+    margin: 0;
+    line-height: 1.08;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(1.8rem, 5vw, 3.1rem);
+    color: #102027;
+}
+
+.lead {
+    margin: 1rem 0 0;
+    font-size: clamp(1rem, 2.4vw, 1.22rem);
+    color: var(--ink-soft);
+    max-width: 62ch;
+}
+
+.actions {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.btn {
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.72rem 1.15rem;
+    font-weight: 600;
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #f7fffd;
+    box-shadow: 0 10px 18px rgba(24, 111, 101, 0.25);
+}
+
+.btn-primary:hover {
+    background: #1b7e73;
+}
+
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--accent-dark);
+    border: 1px solid rgba(15, 79, 72, 0.25);
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.72);
+}
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatY {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-card {
+        border-radius: 18px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+    }
+}

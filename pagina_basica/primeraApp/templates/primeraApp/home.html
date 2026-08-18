@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inicio | Django</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'primeraApp/css/home.css' %}" />
+</head>
+<body>
+    <header class="topbar">
+        <button class="back-btn" type="button" data-go-back data-fallback="/" aria-label="Volver a la pagina anterior">
+            ← Volver
+        </button>
+        <span class="brand">Proyecto Django</span>
+        <nav class="menu">
+            <a href="/primeraApp/">Primera App</a>
+            <a href="/primeraApp/ahora/">Fecha en vivo</a>
+            <a href="/segundaApp/">Segunda App</a>
+            <a href="/admin">Admin</a>
+        </nav>
+    </header>
+
+    <main class="layout">
+        <section class="hero">
+            <p class="tag">home</p>
+            <h1>Bienvenido a la pagina principal de Django</h1>
+            <p class="intro">
+                Tu entorno esta listo para seguir construyendo. Esta pantalla de inicio ahora tiene
+                una interfaz mas moderna, con mejor jerarquia visual y accesos rapidos.
+            </p>
+            <div class="cta-row">
+                <a class="btn btn-solid" href="/primeraApp/">Explorar Primera App</a>
+                <a class="btn btn-outline" href="/primeraApp/ahora/">Abrir reloj en tiempo real</a>
+            </div>
+        </section>
+
+        <aside class="status-card">
+            <h2>Estado del proyecto</h2>
+            <ul>
+                <li>Estructura de vistas separada por responsabilidad.</li>
+                <li>CSS y JavaScript externos para mejor mantenimiento.</li>
+                <li>Base ideal para escalar a templates reutilizables.</li>
+            </ul>
+        </aside>
+    </main>
+    <script src="{% static 'primeraApp/js/navigation.js' %}"></script>
+</body>
+</html>

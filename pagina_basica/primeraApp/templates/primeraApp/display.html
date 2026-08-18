@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Primera App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'primeraApp/css/display.css' %}" />
+</head>
+<body>
+    <div class="ambient-shape shape-a" aria-hidden="true"></div>
+    <div class="ambient-shape shape-b" aria-hidden="true"></div>
+    <button class="back-btn" type="button" data-go-back data-fallback="/" aria-label="Volver a la pagina anterior">
+        ← Volver
+    </button>
+
+    <main class="hero-card">
+        <p class="eyebrow">primera app</p>
+        <h1>Bienvenido a una experiencia con más estilo</h1>
+        <p class="lead">
+            Tu aplicación Django ya está corriendo. Este bloque de inicio ahora tiene una apariencia más moderna,
+            clara y lista para seguir creciendo.
+        </p>
+        <div class="actions">
+            <a class="btn btn-primary" href="/primeraApp/ahora/">Ver fecha en tiempo real</a>
+            <a class="btn btn-ghost" href="/admin/">Ir al panel admin</a>
+        </div>
+    </main>
+    <script src="{% static 'primeraApp/js/navigation.js' %}"></script>
+</body>
+</html>
